@@ -1,0 +1,20 @@
+{
+  "name": "seneca-formatter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api-service.js",
+  "scripts": {
+    "linter": "semistandard"
+  },
+  "author": "Fernando Cagale <fernando.b.cagale@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "currency-formatter": "^1.2.1",
+    "hapi": "^16.1.1",
+    "joi": "^10.4.2",
+    "seneca": "^3.3.0"
+  },
+  "devDependencies": {
+    "semistandard": "^11.0.0"
+  }
+}
