@@ -4,13 +4,18 @@ const Joi = require('joi');
 const Hapi = require('hapi');
 
 Seneca({tag: 'api'})
-  .client({
-    pin: 'role:currency,format:usd',
-    port: 9001
+  .use('consul-registry', {
+    host: '127.0.0.1'
   })
-  .client({
-    pin: 'role:currency,format:brl',
-    port: 9002
+  .use('mesh', {
+    discover: {
+      registry: {
+        active: true
+      },
+      multicast: {
+        active: false
+      }
+    }
   })
   .ready(function () {
     const seneca = this;

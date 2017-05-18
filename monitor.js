@@ -1,13 +1,12 @@
 const Seneca = require('seneca');
+const Mesh = require('seneca-mesh');
 
-Seneca({tag: 'usd'})
-  .test('print')
+Seneca({log: 'silent'})
   .use('consul-registry', {
     host: '127.0.0.1'
   })
-  .use('./logic/usd')
-  .use('mesh', {
-    pin: 'role:currency,format:usd',
+  .use(Mesh, {
+    monitor: true,
     discover: {
       registry: {
         active: true
@@ -16,8 +15,4 @@ Seneca({tag: 'usd'})
         active: false
       }
     }
-  })
-  .ready(() => {
-    const seneca = this;
-    console.log('usd', seneca.id);
   });

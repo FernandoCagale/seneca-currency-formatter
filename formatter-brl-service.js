@@ -1,10 +1,21 @@
 const Seneca = require('seneca');
 
 Seneca({tag: 'brl'})
+  .test('print')
+  .use('consul-registry', {
+    host: '127.0.0.1'
+  })
   .use('./logic/brl')
-  .listen({
+  .use('mesh', {
     pin: 'role:currency,format:brl',
-    port: 9002
+    discover: {
+      registry: {
+        active: true
+      },
+      multicast: {
+        active: false
+      }
+    }
   })
   .ready(() => {
     const seneca = this;
