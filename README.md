@@ -1,5 +1,7 @@
 # seneca-currency-formatter
 
+[seneca-mesh](https://github.com/FernandoCagale/seneca-currency-formatter/tree/mesh)
+
 ```sh
 $ npm install
 ```
