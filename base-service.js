@@ -1,5 +1,5 @@
-var Seneca = require('seneca');
-var Mesh = require('seneca-mesh');
+const Seneca = require('seneca');
+const Mesh = require('seneca-mesh');
 
 Seneca({tag: 'base'})
   .test('print')
